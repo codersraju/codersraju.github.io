@@ -8,10 +8,12 @@
     box-sizing: border-box;
     outline: none;
 }
+/* define custom css variables */
 :root {
     --bg-black-900: #000000;
     --bg-black-100: #dddddd;
     --bg-black-50: #eff0f4;
+    --bg-opacity: rgba(255,255,255,0.5);
     --text-black-900: #000000;
     --text-black-700: #555555;
     --text-black-600: #666666;
@@ -30,6 +32,20 @@
 }
 html {
     scroll-behavior: smooth;
+}
+/* override custom css variables for dark theme */
+body.dark {
+    --bg-black-900: #ffffff;
+    --bg-black-100: #353535;
+    --bg-black-50: #2b2c2f;
+    --bg-opacity: rgba(43,44,47,0.5);
+    --text-black-900: #ffffff;
+    --text-black-700: #ffffff;
+    --text-black-600: #bbbbbb;
+    --outer-shadow: 3px 3px 3px #222327, -3px -3px 3px #363636;
+    --outer-shadow-0: 0 0 0 #222327, 0 0 0 #363636;
+    --inner-shadow: inset 3px 3px 3px #222327, inset -3px -3px 3px #363636;
+    --inner-shadow-0: inset 0 0 0 #222327, inset 0 0 0 #363636;
 }
 body {
     font-size: 16px;
@@ -227,6 +243,7 @@ section .section-title .title {
 	position: relative;
 	font-weight: 600;
     text-align: center;
+    color: var(--text-black-900);
 
 }
 section .section-title .title::before {
@@ -236,7 +253,7 @@ section .section-title .title::before {
 	left: 50%;
 	width: 160px;
 	height: 3px;
-	background: #000000;
+	background-color: var(--text-black-900);
 	transform: translateX(-50%);
 }
 section .section-title .title::after {
@@ -288,6 +305,68 @@ section .section-title .title::after {
 .section.hide {
     display: none;
 }
+/* -- Start Pre-Loader Animation Styling -- */
+.pre-loader {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1500;
+    background-color: var(--bg-black-50);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pre-loader.fade-out {
+    opacity: 0;
+    transition: all 0.6s ease;
+    -webkit-transition: all 0.6s ease;
+    -moz-transition: all 0.6s ease;
+    -ms-transition: all 0.6s ease;
+    -o-transition: all 0.6s ease;
+}
+.pre-loader .box {
+    width: 65px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.pre-loader .box div {
+    height: 15px;
+    width: 15px;
+    background-color: var(--skin-color);
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    animation: preLoader 1s ease infinite;
+    -webkit-animation: preLoader 1s ease infinite;
+}
+.pre-loader .box div:nth-child(2){
+    animation-delay: 0.1s;
+}
+.pre-loader .box div:nth-child(3){
+    animation-delay: 0.2s;
+}
+@keyframes preLoader {
+    0%, 100% {
+        transform: translateY(0);
+        -webkit-transform: translateY(0);
+        -moz-transform: translateY(0);
+        -ms-transform: translateY(0);
+        -o-transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-30px);
+        -webkit-transform: translateY(-30px);
+        -moz-transform: translateY(-30px);
+        -ms-transform: translateY(-30px);
+        -o-transform: translateY(-30px);
+    }
+}
+/* x -- End Pre-Loader Animation Styling -- x */
 /* -- Start Header Section Styling -- */
 #header {
     padding: 20px 16px;
@@ -453,7 +532,7 @@ section .section-title .title::after {
     display: inline-block;
     font-size: 28px;
     font-weight: 600;
-    color: var(--text-black-700);
+    color: var(--text-black-600);
     padding: 5px 30px;
     text-transform: capitalize;
     border-radius: 30px;
@@ -547,7 +626,7 @@ section .section-title .title::after {
 #home .home-text h1 {
     font-size: 20px;
     font-weight: 600;
-    color: var(--text-black-700);
+    color: var(--text-black-600);
     margin: 0;
     text-transform: capitalize;
 }
@@ -649,6 +728,7 @@ section .section-title .title::after {
 #about .about-info h2 {
     font-weight: 600;
     margin-bottom: 1rem;
+    color: var(--text-black-600);
 }
 #about .about-info h2 span {
     color: var(--text-black-600);
@@ -656,6 +736,7 @@ section .section-title .title::after {
 #about .about-info p {
     font-size: 15px;
     font-style: italic;
+    color: var(--text-black-600);
 }
 #about .about-info .btn-1 {
     margin: 30px 20px 0 0;
@@ -768,6 +849,7 @@ section .section-title .title::after {
     display: block;
     margin: 0 auto 30px;
     position: relative;
+    color: var(--text-black-600);
 }
 #services .services-item-inner .icon::after {
     content: "";

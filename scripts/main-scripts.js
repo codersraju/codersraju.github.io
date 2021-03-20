@@ -1,3 +1,12 @@
+
+// pre-loader animation script
+window.addEventListener("load", () =>{
+    document.querySelector(".pre-loader").classList.add("fade-out");
+    setTimeout(() =>{
+        document.querySelector(".pre-loader").style.display = "none";
+    },600)
+})
+
 // typing animation script
 var typed = new Typed(".typing",{
     strings: ["YouTuber", "Designer", "Developer", "Blogger", "Frelancer"],

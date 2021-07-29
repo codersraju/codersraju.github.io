@@ -55,3 +55,12 @@
          font-size: 35px;
      }
 }
+
+@media(max-width: 350px){
+    #about .about-info h2 {
+    font-weight: 700;
+    margin-bottom: 1rem;
+    padding-right: 5px;
+    color: var(--text-black-600);
+    }
+}

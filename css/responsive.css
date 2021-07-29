@@ -56,9 +56,8 @@
      }
 }
 
-@media(max-width: 350px){
+@media (min-width: 250px) and (max-width: 350px){
     #about .about-info h2 {
     text-align: center;
-    font-weight: 700;
     }
 }

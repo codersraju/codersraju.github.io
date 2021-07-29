@@ -60,6 +60,16 @@
 	#about .my-skills {
 		margin-top: 3rem;
 	}
+	#about .about-info .btn-1 {
+    margin: 20px 6px 0 0;
+	}
+	#about .about-info a:last-child {
+		display: none;
+	}
+	#about .my-skills .skills-item {
+    max-width: 100%;
+    flex: 0 0 100%;
+	}
     #about .about-info h2 {
 	text-align: center;
 	padding-right: 10px;
@@ -71,11 +81,21 @@
 		padding: 10px;
 	}
 	#about .my-skills .description .description-item:nth-child(odd) {
-    padding-right: 0;
+    padding-right: 15px;
     text-align: right;
 	}
 	#about .my-skills .description .description-item:nth-child(even) {
-    padding-left: 0;
+    padding-left: 15px;
 	}
-
+	#about .my-skills .description .description-item-inner::before {
+		display: none;
+	}
+	#about .my-skills .description .description-item-inner .icon {
+		display: none;
+	}
+	#portfolio .portfolio-item {
+    flex: 0 0 100%;
+    min-width: 100%;
+	}
+	
 }

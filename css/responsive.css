@@ -56,9 +56,26 @@
      }
 }
 
-@media (min-width: 250px) and (max-width: 360px){
+@media (min-width: 250px) and (max-width: 362px){
+	#about .my-skills {
+		margin-top: 3rem;
+	}
     #about .about-info h2 {
-    text-align: center;
-    padding-right: 10px;
+	text-align: center;
+	padding-right: 10px;
     }
+	#about .my-skills .description::before {
+		display: none;
+	}
+	#about .my-skills .description .description-item {
+		padding: 10px;
+	}
+	#about .my-skills .description .description-item:nth-child(odd) {
+    padding-right: 0;
+    text-align: right;
+	}
+	#about .my-skills .description .description-item:nth-child(even) {
+    padding-left: 0;
+	}
+
 }
